@@ -4,7 +4,8 @@
 </p>
 
 <p align="center">
-  A web service that generates random jokes about random people. Built with Go.
+  A web service that leverages uinames.com/api & api.icndb.com/jokes to generate random
+  nerd jokes about random nerds. Built with Go.
 </p>
 
 <p align="center">
@@ -37,13 +38,17 @@ www.linkedin.com/in/barry-burch-digital-native<br>
 
 ## About
 
-The flatten package was created to be submitted to the Armada Group as the coding exercise portion of an initial screening for a position as a software engineer at Apple Inc.
+The joker web service was created to be submitted to the Armada Group as the coding exercise portion of an initial screening for a contract position as a software engineer at Apple Inc.
 
 
 ## Usage
 
 
 ## Performance
+
+The joker web service leverages funtionality in the gorilla/mux and net/http Golang packages. Part of what the joker web service inherits by using these packages is the ablility to process multiple concurrent requests.
+
+To allow joker web service to remain responsive under load and to be highly available, the project inludes a Dockerfile and a deployment yaml that will make it possible to 
 
 
 
