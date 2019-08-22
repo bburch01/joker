@@ -4,8 +4,7 @@
 </p>
 
 <p align="center">
-  A web service that leverages uinames.com/api & api.icndb.com/jokes to generate random
-  nerd jokes about random nerds. Built with Go.
+  A web service that leverages uinames.com/api & api.icndb.com/jokes to generate random nerd jokes about random nerds. Built with Go.
 </p>
 
 <p align="center">
@@ -43,12 +42,20 @@ The joker web service was created to be submitted to the Armada Group as the cod
 
 ## Usage
 
+First you will need to get the joker web service running on your system.
+
+For macOS, simply extract and run the joker executable inluded in the submitted joker zip file.
+
+If you have Go installed on your system, you can extract the joker project from the submitted joker zip file and then use 'go build', 'go install', or 'go run main.go' from the command line to start the joker web service (note: it is assumed that you are already familiar with running Go applications).
+
+Once you have the joker web service running, you can use reach it with curl (from the command line) or from a browser using the following url: http://localhost:5000
+
 
 ## Performance
 
-The joker web service leverages funtionality in the gorilla/mux and net/http Golang packages. Part of what the joker web service inherits by using these packages is the ablility to process multiple concurrent requests.
+The joker web service leverages functionality in the gorilla/mux and net/http Golang packages. Part of what the joker web service inherits by using these packages is the ablility to process multiple concurrent requests (the net/http server will spawn one go routing per request).
 
-To allow joker web service to remain responsive under load and to be highly available, the project inludes a Dockerfile and a deployment yaml that will make it possible to 
+To allow the joker web service to remain responsive under load and to be highly available, the project inludes a Dockerfile and a deployment yaml that will make it possible to create a scalable production deployment into a kubernetes cluster (note: additional kubernetes configuration will be required, the joker deployment yaml is simply a reasonable starting point).
 
 
 
