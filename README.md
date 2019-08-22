@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  
+  A web service that generates random jokes about random people. Built with Go.
 </p>
 
 <p align="center">
