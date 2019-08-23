@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joker
+  labels:
+    app: joker
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1      
+  selector:
+    matchLabels:
+      app: joker
+  template:
+    metadata:
+      labels:
+        app: joker
+    spec:
+      containers:
+      #START joker container
+      - name: joker
+        image: us.gcr.io/kubedemo-233218/joker/joker
+        ports:
+        - containerPort: 5000
+      #END fotaasweb container      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: joker
+  labels:
+    app: joker
+spec:
+  ports:
+  - port: 80
+    targetPort: 5000
+    protocol: TCP
+    name: http
+  selector:
+    app: joker
+  type: LoadBalancer          

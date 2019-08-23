@@ -48,8 +48,11 @@ For macOS, simply extract and run the joker executable inluded in the submitted 
 
 If you have Go installed on your system, you can extract the joker project from the submitted joker zip file and then use 'go build', 'go install', or 'go run main.go' from the command line to start the joker web service (note: it is assumed that you are already familiar with running Go applications).
 
-Once you have the joker web service running, you can use reach it with curl (from the command line) or from a browser using the following url: http://localhost:5000
+Once you have the joker web service running, you can reach it with curl (from the command line) or from a browser using the following url: http://localhost:5000
 
+Bonus Points: joker is currently deployed to GKE (Google Kubernetes Environment) and can be reached http://35.222.13.145
+
+You could recreate this deployment in another Kubernetes cluster but you will need to update the /Users/barry/go/src/github.com/bburch01, us.gcr.io/kubedemo-233218, and /app/go/src/github.com/bburch01/joker references in the deployment files (docker-compose-gke.yaml, joker-deployment-gke.yaml & the joker project Dockerfile)
 
 ## Performance
 

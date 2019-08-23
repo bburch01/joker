@@ -47,6 +47,8 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", rootHandler).Methods("GET")
 
+	log.Print("starting joker web server, listening on port :5000")
+
 	http.ListenAndServe(":5000", r)
 
 }
