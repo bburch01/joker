@@ -58,6 +58,6 @@ The joker web server Golang project is also publicly available for cloning from 
 
 ## Performance
 
-The joker web service leverages functionality in the gorilla/mux and net/http Golang packages. Part of what the joker web service inherits by using these packages is the ablility to process multiple concurrent requests (the net/http server will spawn one go routing per request).
+The joker web service leverages functionality from the gorilla/mux and net/http Golang packages. Part of what the joker web service inherits by using these packages is the ablility to process multiple concurrent requests (the net/http server will spawn one go routing per request).
 
-To allow the joker web service to remain responsive under load and to be highly available, the project inludes a Dockerfile and a deployment yaml that will make it possible to create a scalable production deployment into a kubernetes cluster (note: additional kubernetes configuration will be required, the joker deployment yaml is simply a reasonable starting point).
+To allow the joker web service to remain responsive under load and to be highly available, the project inludes a Dockerfile, a Docker compose yaml, and a kubernetes deployment yaml that will make it possible to create a scalable production deployment into a kubernetes cluster (note: additional kubernetes configuration will be required, the joker deployment files are simply a reasonable starting point).
