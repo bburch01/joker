@@ -71,7 +71,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	// TODO: If the client runs joker many times in rapid succession, uinames.com/api will flag
 	// the (session?, IP?) of the joker web server as a bot and will start sending access denied
 	// error html instead of valid JSON. Currently the only fix appears to be to restart the joker
-	// web server. Find solution to this problem that doesn't require a joker web server restart.
+	// web server. Find a solution to this problem that doesn't require a joker web server restart.
 	if err = json.Unmarshal([]byte(personJSON), &p); err != nil {
 		fmt.Fprintf(w, "uh, houston, we've had a problem: the response from uinames.com/api was not JSON\n")
 		log.Printf("response from uinames.com/api was not JSON: %v ", string(personJSON))

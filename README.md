@@ -50,16 +50,14 @@ If you have Go installed on your system, you can extract the joker project from 
 
 Once you have the joker web service running, you can reach it with curl (from the command line) or from a browser using the following url: http://localhost:5000
 
-Bonus Points: joker is currently deployed to GKE (Google Kubernetes Environment) and can be reached http://35.222.13.145
+Bonus Points: joker is currently deployed to GKE (Google Kubernetes Environment) and can be reached at http://35.222.13.145
 
-You could recreate this deployment in another Kubernetes cluster but you will need to update the /Users/barry/go/src/github.com/bburch01, us.gcr.io/kubedemo-233218, and /app/go/src/github.com/bburch01/joker references in the deployment files (docker-compose-gke.yaml, joker-deployment-gke.yaml & the joker project Dockerfile)
+You could recreate this deployment in another Kubernetes cluster but you will need to update the /Users/barry/go/src/github.com/bburch01, us.gcr.io/kubedemo-233218, and /app/go/src/github.com/bburch01/joker references in the deployment files (docker-compose-gke.yaml, joker-deployment-gke.yaml & the joker project Dockerfile) with values that make sense for your cluster.
+
+The joker web server Golang project is also available to be clone from GitHub: https://github.com/bburch01/joker.git
 
 ## Performance
 
 The joker web service leverages functionality in the gorilla/mux and net/http Golang packages. Part of what the joker web service inherits by using these packages is the ablility to process multiple concurrent requests (the net/http server will spawn one go routing per request).
 
 To allow the joker web service to remain responsive under load and to be highly available, the project inludes a Dockerfile and a deployment yaml that will make it possible to create a scalable production deployment into a kubernetes cluster (note: additional kubernetes configuration will be required, the joker deployment yaml is simply a reasonable starting point).
-
-
-
-
