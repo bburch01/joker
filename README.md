@@ -54,7 +54,7 @@ Bonus Points: joker is currently deployed to GKE (Google Kubernetes Environment)
 
 You could recreate this deployment in another Kubernetes cluster but you will need to update the /Users/barry/go/src/github.com/bburch01, us.gcr.io/kubedemo-233218, and /app/go/src/github.com/bburch01/joker references in the deployment files (docker-compose-gke.yaml, joker-deployment-gke.yaml & the joker project Dockerfile) with values that make sense for your cluster.
 
-The joker web server Golang project is also available to be clone from GitHub: https://github.com/bburch01/joker.git
+The joker web server Golang project is also publicly available for cloning from GitHub: https://github.com/bburch01/joker.git
 
 ## Performance
 
